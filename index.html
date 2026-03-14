@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacho Gas - Tarjeta Digital Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --azul-gas: #1a4f8b;
+            --amarillo-seguridad: #ffcc00;
+            --rojo-fuego: #e63946;
+            --blanco: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Contenedor Principal (Tarjeta) */
+        .card {
+            background: var(--azul-gas);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 4px solid var(--amarillo-seguridad);
+            position: relative;
+        }
+
+        /* Header con Logo extraído */
+        .header {
+            background: linear-gradient(135deg, #1e5799 0%, #2989d8 100%);
+            padding: 30px 20px;
+            color: var(--amarillo-seguridad);
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid var(--amarillo-seguridad);
+            background: white;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        h1 { font-size: 28px; font-weight: 900; text-transform: uppercase; margin-bottom: 5px; color: #fff; }
+        .subtitle { font-size: 14px; color: var(--amarillo-seguridad); font-weight: bold; margin-bottom: 15px; }
+
+        /* Slogan */
+        .slogan {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin: 10px 20px;
+            border-radius: 10px;
+            font-style: italic;
+            font-size: 13px;
+            color: #fff;
+        }
+
+        /* Servicios */
+        .services {
+            background: white;
+            padding: 20px;
+            text-align: left;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .service-item i {
+            color: var(--azul-gas);
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        /* Botones de Acción Interactivos */
+        .actions { padding: 20px; background: white; }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .btn:active { transform: scale(0.95); }
+
+        .btn-whatsapp { background-color: #25d366; color: white; }
+        .btn-call { background-color: var(--azul-gas); color: white; }
+        .btn-pdf { background-color: var(--rojo-fuego); color: white; }
+
+        .btn i { margin-right: 10px; font-size: 22px; }
+
+        /* Footer */
+        .footer {
+            padding: 15px;
+            background: #eee;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .vibras-brand {
+            color: #ff6600;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Reloj Tiempo Real */
+        #clock { font-weight: bold; color: var(--azul-gas); margin-top: 5px; display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="app-card">
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/150/FFFFFF/1a4f8b?text=NACHO+GAS" alt="Logo Nacho Gas">
+            </div>
+            <h1>NACHO GAS</h1>
+            <p class="subtitle">TÉCNICO DE INSTALACIONES DOMICILIARIAS</p>
+            <div class="slogan">
+                "Tu seguridad es mi compromiso, tu comodidad es mi objetivo"
+            </div>
+        </div>
+
+        <div class="services">
+            <div class="service-item"><i class="fas fa-check-circle"></i> Instalaciones Residenciales</div>
+            <div class="service-item"><i class="fas fa-check-circle"></i> Mantenimiento Industrial</div>
+            <div class="service-item"><i class="fas fa-check-circle"></i> Revisión y Reparación de Estufas</div>
+            <div class="service-item"><i class="fas fa-tools"></i> Experto en Gas y Estufas</div>
+        </div>
+
+        <div class="actions">
+            <a href="https://wa.me/573122144586?text=Hola%20Nacho%20Gas,%20necesito%20un%20servicio%20técnico." class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+
+            <a href="tel:+573122144586" class="btn btn-call">
+                <i class="fas fa-phone-alt"></i> Llamar al Técnico
+            </a>
+
+            <a href="#" onclick="alert('Descargando Portafolio de Servicios PDF...')" class="btn btn-pdf">
+                <i class="fas fa-file-pdf"></i> Ver Portafolio PDF
+            </a>
+            
+            <span id="clock"></span>
+        </div>
+
+        <div class="footer">
+            <p>App desarrollada por <a href="tel:3117700431" class="vibras-brand">VIBRAS POSITIVAS (3117700431)</a></p>
+            <p>© 2026 Derechos de Autor - Colombia</p>
+        </div>
+    </div>
+
+    <script>
+        // --- CONTROL INVISIBLE DE SUSCRIPCIÓN ---
+        // Fecha de vencimiento: 14 de Marzo de 2027
+        const FECHA_VENCIMIENTO = new Date('2027-03-14T23:59:59');
+        
+        function verificarSuscripcion() {
+            const hoy = new Date();
+            if (hoy > FECHA_VENCIMIENTO) {
+                document.getElementById('app-card').innerHTML = `
+                    <div style="padding: 50px; color: white; background: #000; height: 100vh;">
+                        <h2>Suscripción Vencida</h2>
+                        <p>Contacte a Vibras Positivas para renovar su tarjeta digital.</p>
+                        <br>
+                        <a href="https://wa.me/573117700431" style="color: yellow;">Soporte Técnico</a>
